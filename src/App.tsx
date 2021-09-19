@@ -8,8 +8,6 @@ function App() {
     <div className="App">
       <Button type="primary">Button</Button>
 
-
-
        <img src={logo} className="App-logo" alt="logo" />
      
     </div>
