@@ -80,7 +80,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "prepare": "husky install",
-    "server": "json-server server/db.json --watch"
+    "server": "json-server server/db.json --watch --port 3001"
   },
   "eslintConfig": {
     "extends": [
@@ -169,6 +169,7 @@
     ]
   },
   "devDependencies": {
+    "@types/qs": "^6.9.7",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
