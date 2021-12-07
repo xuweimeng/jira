@@ -4,7 +4,7 @@ import List from './List';
 import { cleanObject, useMount, useDebounce } from 'utils';
 import SearchPanel from './SearchPanel';
 
-import type {UsersProps, ProjectsProps, ParamsProps} from './data.d';
+import type { UsersProps, ProjectsProps, ParamsProps } from './data.d';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 

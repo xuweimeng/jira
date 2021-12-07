@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from 'logo.svg';
 import ProjectListScreen from 'screens';
 import 'App.css';
 

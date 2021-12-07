@@ -2,14 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App'
+import LoginScreen from 'login';
 import reportWebVitals from './reportWebVitals';
+import { loadDevTools } from 'jira-dev-tool';
 
-ReactDOM.render(
+loadDevTools(() => ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <LoginScreen />
   </React.StrictMode>,
   document.getElementById('root')
-);
+));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
