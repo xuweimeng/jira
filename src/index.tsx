@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import LoginScreen from "login";
 import reportWebVitals from "./reportWebVitals";
 import { loadDevTools } from "jira-dev-tool";
 import AppProviders from "context";
@@ -11,10 +10,8 @@ loadDevTools(() =>
   ReactDOM.render(
     <React.StrictMode>
       <AppProviders>
-        {/* <App /> */}
-        <LoginScreen />
+        <App />
       </AppProviders>
-      {/* <LoginScreen /> */}
     </React.StrictMode>,
     document.getElementById("root")
   )
