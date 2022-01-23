@@ -4,7 +4,7 @@ import { UsersProps } from "screens/data.d";
 const apiUrl = process.env.REACT_APP_API_URL;
 const localStorageKey = "__auth__provider_token__";
 
-export const getToken = window.localStorage.getItem(localStorageKey);
+export const getToken = () => window.localStorage.getItem(localStorageKey);
 
 export const handleUserResponse = ({ user }: { user: UsersProps }) => {
   window.localStorage.setItem(localStorageKey, user.token || "");
