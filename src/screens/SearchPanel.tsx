@@ -1,6 +1,6 @@
+import { Input, Select } from "antd";
 import React from "react";
 import type { UsersProps, ParamsProps } from "./data.d";
-
 interface SearchPanelProps {
   params: ParamsProps;
   users: UsersProps[];
@@ -14,7 +14,7 @@ const SearchPanel: React.FC<SearchPanelProps> = ({
 }) => {
   return (
     <form>
-      <input
+      <Input
         placeholder="请输入姓名"
         onChange={(e) => {
           setParams({
@@ -23,22 +23,22 @@ const SearchPanel: React.FC<SearchPanelProps> = ({
           });
         }}
       />
-      <select
-        onChange={(e) => {
+      <Select
+        onChange={(e: number) => {
+          if (!e) return;
           setParams({
             ...params,
-            // @ts-ignore
-            personId: e.target.value,
+            personId: e,
           });
         }}
       >
-        <option value="">负责人</option>
+        <Select.Option value="">负责人</Select.Option>
         {users.map((item) => (
-          <option value={item.id} key={item.id}>
+          <Select.Option value={item.id} key={item.id}>
             {item.name}
-          </option>
+          </Select.Option>
         ))}
-      </select>
+      </Select>
     </form>
   );
 };

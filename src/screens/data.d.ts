@@ -15,5 +15,6 @@ export interface ProjectsProps {
     personId: number;
     name: string;
     organization: string;
+    ownerId: number;
     created: number;
 }

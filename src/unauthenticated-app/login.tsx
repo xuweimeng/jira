@@ -1,29 +1,36 @@
 import * as React from "react";
 import { useAuth } from "context/auth-context";
+import { Form, Button, Input } from "antd";
 
+const { Item } = Form;
 const LoginScreen = () => {
   const { login, user } = useAuth();
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const username = (e.currentTarget.elements[0] as HTMLInputElement).value;
-    const password = (e.currentTarget.elements[1] as HTMLInputElement).value;
-    login({ username, password });
+  const onSubmit = (values: { username: string; password: string }) => {
+    login(values);
   };
-  console.log("user", user);
 
   return (
-    <form onSubmit={onSubmit}>
-      <div>
-        <label htmlFor="username">用户名</label>
-        <input type="text" placeholder="用户名" id="username" />
-      </div>
-      <div>
-        <label htmlFor="password">密码</label>
-        <input type="password" placeholder="用户名" id="password" />
-      </div>
-      <button type="submit">登录</button>
-    </form>
+    <Form onFinish={onSubmit}>
+      <Item
+        label="用户名"
+        name="username"
+        rules={[{ required: true, message: "用户名不能为空！" }]}
+      >
+        <Input type="text" placeholder="用户名" />
+      </Item>
+      <Item
+        label="密码"
+        name="password"
+        rules={[{ required: true, message: "用户名不能为空！" }]}
+      >
+        <Input type="password" placeholder="用户名" />
+      </Item>
+      <Item>
+        <Button type="primary" htmlType="submit">
+          登录
+        </Button>
+      </Item>
+    </Form>
   );
 };
 
