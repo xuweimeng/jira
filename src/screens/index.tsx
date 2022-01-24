@@ -6,6 +6,7 @@ import SearchPanel from "./SearchPanel";
 import {useHttp} from 'utils/http';
 
 import type { UsersProps, ProjectsProps, ParamsProps } from "./data.d";
+import styled from "@emotion/styled";
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -27,11 +28,16 @@ const ProjectListScreen = () => {
   });
 
   return (
-    <div>
+    <Container>
+      <h2>项目列表</h2>
       <SearchPanel params={params} users={users} setParams={setParams} />
       <List list={list} users={users} />
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  padding: 3.2rem;
+`
 
 export default ProjectListScreen;

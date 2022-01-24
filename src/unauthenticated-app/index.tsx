@@ -22,7 +22,7 @@ const UnauthenticatedApp = () => {
 
 const ShadowCard = styled(Card)`
 width: 40rem;
-min-height: 56rem;
+min-height: 42rem;
 padding: 3.2rem 4rem;
 border-radious: 0.3rem;
 box-sizing: border-box;
