@@ -25,6 +25,9 @@ const SearchPanel: React.FC<SearchPanelProps> = ({
               name: e.target.value,
             });
           }}
+          style={{
+            width: '200px'
+          }}
         />
       </Form.Item>
       <Form.Item>
@@ -36,6 +39,9 @@ const SearchPanel: React.FC<SearchPanelProps> = ({
               ...params,
               personId: e,
             });
+          }}
+          style={{
+            width: '150px'
           }}
         >
           <Select.Option value="">负责人</Select.Option>
