@@ -2,8 +2,8 @@ import React from "react";
 import ProjectListScreen from "screens";
 import { useAuth } from "context/auth-context";
 import styled from "@emotion/styled";
-import {Space} from 'antd'
-import { AlipayOutlined } from "@ant-design/icons";
+import {Dropdown, Menu, Space} from 'antd'
+import { AlipayOutlined, DownOutlined } from "@ant-design/icons";
 const AuthenticatedApp = () => {
   const { logout } = useAuth();
   return (
@@ -17,7 +17,17 @@ const AuthenticatedApp = () => {
           </Space>
         </HeaderLeft>
         <HeaderRight>
-          <button onClick={logout}>登出</button>
+          <Dropdown overlay={
+            <Menu>
+              <Menu.Item key="logout">
+              <a onClick={logout}>登出</a>
+              </Menu.Item>
+            </Menu>
+          }>
+            <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+              Hover me <DownOutlined />
+            </a>
+          </Dropdown>
         </HeaderRight>
       </Header>
       <Main>
@@ -35,6 +45,8 @@ const Container = styled.div`
 const Header = styled.header`
   grid-area: header;
   height: 6rem;
+  padding: 0 3.2rem;
+  border-bottom: 1px solid #f2f2f2;
   display: flex;
   justify-content: space-between;
   align-items: center;
